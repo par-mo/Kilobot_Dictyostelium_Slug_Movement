@@ -6,6 +6,7 @@ The idea of simulation of slug movement in -*Dictyostelium*- discoideum with kil
 ### Deployment
 
 -Probabilistic four different options: finite-state machine of the individual agent:
+
     *Short-distance to the leader/ Short-distance to the follower (SDLSDF)   
     *Short-distance to the leader/ Medium-distance to the follower (SDLMDF)
     *Short-distance to the leader/ Long-distance to the follower (SDLLDF)   
