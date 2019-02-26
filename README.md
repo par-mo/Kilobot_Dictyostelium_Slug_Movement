@@ -1,7 +1,7 @@
 -Probabilistic six different options: finite-state machine of the individual agent
-          +(SRLSRF):   
-          +(SRLLRF):
-          +(MRLSRF): 
-          +(MRLLRF): 
-          +(LRLMRF): 
-          +(LRLLRF): 
+         1.SRLSRF  
+         2.SRLLRF
+         3.MRLSRF 
+         4.MRLLRF 
+         5.LRLMRF 
+         6.LRLLRF 
