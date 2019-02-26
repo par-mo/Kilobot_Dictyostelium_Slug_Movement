@@ -54,22 +54,37 @@ In this paper, we study the ...
 We design a decentralized decision-making model to allow the robots to decide between different choices, based on their neighbors in the chain. 
 
 
-\section{Two Robots Distance}
+\section{Three Robots Distance}
+ \begin{figure}[h]
+     \centering
+ \includegraphics[scale=0.4]{Figs/PropagationArea.pdf}
+     \caption{Different distances between robots and their propagation areas. }
+     \label{fig:propagation}
+  \end{figure}
 \begin{itemize}
-    \item Short-range distance   (SR)
-    \item Medium-range distance (MR)
-    \item Long-range distance (LR) 
+    \item Short-distance distance   (SD)
+    \item Medium-distance distance (MD)
+    \item Long-distance distance (LD) 
 \end{itemize}
-\section {Finite Machine Scenario }
+\section {Nine Finite Machine Scenario }
 \begin{itemize}
-    \item Short-range to the leader/ Short-range to the follower (SRLSRF):   
-    \item Short-range to the leader/ Long-range to the follower (SRLLRF):
-    \item Medium-range to the leader/ Short-range to the follower  (MRLSRF): 
-    \item Medium-range to the leader/ Long-range to the follower (MRLLRF): 
-    \item Long-range to the leader/ Medium-range to the follower (LRLMRF): 
-    \item Long-range to the leader/ Long-range to the follower (LRLLRF): 
+    \item Short-distance to the leader/ Short-distance to the follower (SDLSDF)   
+    \item Short-distance to the leader/ Medium-distance to the follower (SDLMDF)
+    \item Short-distance to the leader/ Long-distance to the follower (SDLLDF)   
+    \item Medium-distance to the leader/ Short-distance to the follower  (MDLSDF) 
+    \item Medium-distance to the leader/ Medium-distance to the follower  (MDLMDF) 
+    \item Medium-distance to the leader/ Long-distance to the follower (MDLLDF) 
+    \item Long-distance to the leader/ Short-distance to the follower (LDLSDF) 
+    \item Long-distance to the leader/ Medium-distance to the follower (LDLMDF) 
+    \item Long-distance to the leader/ Long-distance to the follower (LDLLDF) 
 \end{itemize}
- 
+ \section{Individual Decision Making Process }
+ \begin{figure}[h]
+     \centering
+ \includegraphics[scale=0.7]{Figs/States.pdf}
+     \caption{Nine different states and the relationship between previous-state and current-state relationship.}
+     \label{fig:states}
+  \end{figure}
  
 \bibliographystyle{model1-num-names}
 \bibliography{sample.bib}
