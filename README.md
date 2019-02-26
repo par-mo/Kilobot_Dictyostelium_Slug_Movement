@@ -9,7 +9,5 @@ The idea of simulation of slug movement in -*Dictyostelium*- discoideum with kil
 
          *SRLSRF  
          *SRLLRF
-         *MRLSRF 
-         *MRLLRF 
-         *LRLMRF 
+         *LRLSRF 
          *LRLLRF 
