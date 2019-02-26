@@ -38,35 +38,44 @@ Understanding the collective behaviors in nature and its potential links to engi
 \section{Introduction}
 The idea of simulation of slug movement in \textit{Dictyostelium discoideum} with kilobots is to have a swarm of kilobots which moves in one direction in a decentralized way, in a leader-follower manner. These robots act independently and asynchronously in the environment. 
 
-Each slug is about $2-–4 mm$, and composed of up to $100k$ starved cells. It is capable of movement by producing a cellulose sheath around it. The slug attractants to light, heat, and humidity in a forward-only direction. Cyclic AMP and a substance called differentiation-inducing factor, help to form different cell types. In the aggregation phase of \textit{D. discoideum} cells differentiated into prestalk(pst) which is $20\%$ of the $D.~d$ population and prespore(psp) which is $80\%$ of the cells population. The pst cells move to the anterior and psp cells move to the posterior end of the slug.
+Each slug is about $2-–4 mm$, and composed of up to $100k$ starved cells. It is capable of movement by producing a cellulose sheath around it. The slug attractants to light, heat, and humidity in a forward-only direction. Cyclic AMP and a substance called differentiation-inducing factor, help to form different cell types. In the aggregation phase of \textit{D. discoideum} cells differentiated into prestalk(pst) which is $20\%$ of the \textit{D.~discoideum} population and prespore(psp) which is $80\%$ of the cells population. The pst cells move to the anterior and psp cells move to the posterior end of the slug.
 
 We design a model of small kilobots with minimum capabilities to move to like a chain. This group of robots reaches to keep the structure of the chain by local interactions only and by utilizing positive feedback.  
 
-In the desired chain, each kilobot needs to recognize the robot in front of it and the one behind it. This identification process happens in every time step. Interestingly, in this model we do not affiliate any id to the robots. Thus, they can move their local position in the chain intentionally. 
+In the desired chain, each kilobot needs to recognize the robot in front of it and the one behind it. This identification process happens in every time step. Interestingly, in this model we do not affiliate any id to the robots. Thus, they can move their local position in the chain intentionally. Since the model is decentralized, the position of the specific kilobot is represented by its distance to its leader and the distance to its follower. 
 
 In this paper, we study the ...
 
 
+%%------------------------------------------------------------------------------------------------------------
+\section {Chain Formation} 
+In real \textit{D. discoideum}, cells have the capability of pulling and pushing each other, which is not possible with Kilobots. We define the Kilobot gradient, which has the same effect of cAMP molecules among the original cell. We choose a robot as the head of the slug. This robot is responsible for finding a good direction and for leading the whole slug. This robot acts as the root of the gradient. We call the head kilobot as the ``source''. Thus the gradient for the source is zero. The nearest robot after the source has the gradient one and the second nearest robot is two and so on. In each time-step, when the robots send the signals, they share the amount of their gradients with each other as well. Therefore, the robots can replace their positions in the chain. Utilizing this method supports the kilobots to recognize their leader and follower in each time-step. \textit{Figure \ref{fig:propagation}} shows the different distances between robots and their propagation areas. 
 
-\section {Related Works}
 
+%%------------------------------------------------------------------------------------------------------------
 \section{Collective Decision-Making Model}
 We design a decentralized decision-making model to allow the robots to decide between different choices, based on their neighbors in the chain. 
 
+%%------------------------------------------------------------------------------------------------------------
+\section{Three Distance Categories}
+We define three different thresholds for the distances to make the decision-making process easier for the robots. 
 
-\section{Three Robots Distance}
  \begin{figure}[h]
      \centering
  \includegraphics[scale=0.4]{Figs/PropagationArea.pdf}
-     \caption{Different distances between robots and their propagation areas. }
+     \caption{ The figure shows the distances between four different kilobots, which is \(d_{12}<d_{13}\). In this example, if the robot $R_1$ is the origin, its gradient is equal to zero.  Therefore, the gradient value of $R_2$ is equal to two, since it is the nearest neighbor for $R_1$. Then, the gradient value for the robot $R_3$ is equal to three, because it is the nearest neighbour $R_2$. Eventually, the gradient value for $R_4$ will be four.  }
      \label{fig:propagation}
   \end{figure}
 \begin{itemize}
-    \item Short-distance distance   (SD)
-    \item Medium-distance distance (MD)
-    \item Long-distance distance (LD) 
+    \item Short-distance    (SD)
+    \item Medium-distance  (MD)
+    \item Long-distance  (LD) 
+    
 \end{itemize}
-\section {Nine Finite Machine Scenario }
+%%------------------------------------------------------------------------------------------------------------
+\section {Kilobot Finite Machine }
+In each time-step, the movement of a kilobot is either `left' or `right' or `forward'. The global objective of the system is to keep the shape of the chain. Also, the minimum objective of each robot in every time-step is to get closer to its leader and to be close enough to its follower.  
+\subsection{Nine different states}
 \begin{itemize}
     \item Short-distance to the leader/ Short-distance to the follower (SDLSDF)   
     \item Short-distance to the leader/ Medium-distance to the follower (SDLMDF)
@@ -78,7 +87,9 @@ We design a decentralized decision-making model to allow the robots to decide be
     \item Long-distance to the leader/ Medium-distance to the follower (LDLMDF) 
     \item Long-distance to the leader/ Long-distance to the follower (LDLLDF) 
 \end{itemize}
+%%------------------------------------------------------------------------------------------------------------
  \section{Individual Decision Making Process }
+ The movement of each kilobot in the chain is determined by its current state, its previous state and its distance to its leader and its follower in the chain.  
  \begin{figure}[h]
      \centering
  \includegraphics[scale=0.7]{Figs/States.pdf}
