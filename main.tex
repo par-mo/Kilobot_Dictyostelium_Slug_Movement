@@ -45,7 +45,8 @@ We design a model of small kilobots with minimum capabilities to move to like a 
 In the desired chain, each kilobot needs to recognize the robot in front of it and the one behind it. This identification process happens in every time step. Interestingly, in this model we do not affiliate any id to the robots. Thus, they can move their local position in the chain intentionally. Since the model is decentralized, the position of the specific kilobot is represented by its distance to its leader and the distance to its follower. 
 
 In this paper, we study the ...
-
+%%------------------------------------------------------------------------------------------------------------
+\section {Kilobots} 
 
 %%------------------------------------------------------------------------------------------------------------
 \section {Chain Formation} 
@@ -58,20 +59,20 @@ We design a decentralized decision-making model to allow the robots to decide ti
 
 %%------------------------------------------------------------------------------------------------------------
 \section{Three Distance Categories}
-We define three different thresholds for the distances to make the decision-making process easier for the robots. 
+We define three different thresholds for the distances to make the decision-making process easier for the robots. Each kilobot can send and receive the message from others in range of \textit{10 cm}. We defined three different thresholds based on the distance between each two robots. 
 
- \begin{figure}[h]
-     \centering
- \includegraphics[scale=0.4]{Figs/PropagationArea.pdf}
-     \caption{ The figure shows the distances between four different kilobots, which is \(d_{12}<d_{13}\). In this example, if the robot $R_1$ is the origin, its gradient is equal to zero.  Therefore, the gradient value of $R_2$ is equal to two, since it is the nearest neighbor for $R_1$. Then, the gradient value for the robot $R_3$ is equal to three, because it is the nearest neighbour $R_2$. Eventually, the gradient value for $R_4$ will be four.  }
-     \label{fig:propagation}
-  \end{figure}
 \begin{itemize}
-    \item Short-distance    (SD)
-    \item Medium-distance  (MD)
-    \item Long-distance  (LD) 
+    \item Short-distance \textit{(SD)}: distance between \textit{2 cm} to \textit{8 cm}
+    \item Medium-distance \textit{(MD)}: distance between \textit{8 cm} to \textit{14 cm}
+    \item Long-distance \textit{(LD)} : distance between \textit{14 cm} to \textit{20 cm}
     
 \end{itemize}
+ \begin{figure}[h]
+     \centering
+ \includegraphics[scale=0.4]{Figs/PropagationArea_BW.pdf}
+     \caption{ The figure shows the distances between four different kilobots, which is \(d_{12}<d_{13}\). In this example, if the robot $R_1$ is the origin, its gradient is equal to zero.  Therefore, the gradient value of $R_2$ is equal to one, since it is the nearest neighbor for $R_1$. Then, the gradient value for the robot $R_3$ is equal to two, because it is the nearest neighbour $R_2$. Eventually, the gradient value for $R_4$ will be three.  }
+     \label{fig:propagation}
+  \end{figure}
 %%------------------------------------------------------------------------------------------------------------
 \section {Kilobot Finite Machine }
 In each time-step, the movement of a kilobot is either `left' or `right' or `forward'. The global objective of the system is to keep the shape of the chain. Also, the minimum objective of each robot in every time-step is to get closer to its leader and to be close enough to its follower.  
