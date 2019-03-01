@@ -49,6 +49,7 @@ In this paper, we study the ...
 \section {Kilobots} 
 \subsection{Direction Finding}
 \subsection{Ad-hoc counting system}
+\subsection{Birds flock}
 %%------------------------------------------------------------------------------------------------------------
 \section {Chain Formation} 
 In real \textit{D. discoideum}, cells have the capability of pulling and pushing each other, which is not possible with Kilobots. We define the Kilobot gradient, which has the same effect of cAMP molecules among the original cell. We choose a robot as the head of the slug. This robot is responsible for finding a good direction and for leading the whole slug. This robot acts as the root of the gradient. We call the head kilobot as the ``source''. Thus the gradient for the source is zero. The nearest robot after the source has the gradient one and the second nearest robot is two and so on. In each time-step, when the robots send the signals, they share the amount of their gradients with each other as well. Therefore, the robots can replace their positions in the chain. Utilizing this method supports the kilobots to recognize their leader and follower in each time-step. \textit{Figure \ref{fig:propagation}} shows the different distances between robots and their propagation areas. 
