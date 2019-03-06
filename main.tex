@@ -9,6 +9,7 @@
  \usepackage{amssymb}
  
 \usepackage{lineno}
+%\addbibresource{mybibliography.bib}
 
 %\journal{Journal Name}
 \begin{document}
@@ -55,7 +56,7 @@ In this paper, we study the ...
 \subsection{Direction Finding}
 \subsection{Ad-hoc counting system}
 \subsection{Leader-follower behaviors} This behavior is used in keeping the chain pattern. Where the leader kilobot decides to develop a path and the kilobots behind follow in relatively the same direction. A Kilobot in the pause state will wait stable until both Kilobots in front and behind have settled and transferred to the pause state. Next, the Kilobot can change to the moving state.
-The Kilobots in moving state proceed their direction based on the acquired strength message from their leaders. Each Kilobot transfers again to the pause state when the distance to its relative leader is less than one cm. 
+The Kilobots in moving state proceed their direction based on the acquired strength message from their leaders \cite{Beckerleg2016EvolvingRobot}. Each Kilobot transfers again to the pause state when the distance to its relative leader is less than one cm. 
 \subsection{Birds flock}
 
 %%------------------------------------------------------------------------------------------------------------
@@ -109,9 +110,9 @@ In each time-step, the movement of a kilobot is either `left' or `right' or `for
      \label{fig:states}
   \end{figure}
  
-\bibliographystyle{model1-num-names}
-\bibliography{sample.bib}
- 
+
+\bibliographystyle{plain}
+\bibliography{references.bib}
 
 \end{document}
 
