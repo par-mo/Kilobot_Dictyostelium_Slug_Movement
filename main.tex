@@ -44,12 +44,20 @@ We design a self-organized model of small kilobots with minimum capabilities to 
 
 In the desired chain, each kilobot needs to recognize the robot in front of it and the one behind it. This identification process happens in every time step. Interestingly, in this model we do not affiliate any id to the robots. Thus, they can move their local position in the chain intentionally. Since the model is decentralized, the position of the specific kilobot is represented by its distance to its leader and the distance to its follower. 
 
+In most of the experiments such as the Harvard experiment, a sequential ID  is allocated to each Kilobot. This ID number provide the knowledge to the robots to be aware of their positions based on the robot in front or and the robot in behind. In our model, Kilobots do not possess any specified ID number and elect their leader and follower in each iteration based on the nearest- neighbor distance \textit{(see Figure \ref{fig:propagation})}. 
+
+
+In our model Kilobots operate in two states, pause or move, which is determined by the current state of their neighbors Kilobots in the chain. 
+
 In this paper, we study the ...
 %%------------------------------------------------------------------------------------------------------------
 \section {Kilobots} 
 \subsection{Direction Finding}
 \subsection{Ad-hoc counting system}
+\subsection{Leader-follower behaviors} This behavior is used in keeping the chain pattern. Where the leader kilobot decides to develop a path and the kilobots behind follow in relatively the same direction. A Kilobot in the pause state will wait stable until both Kilobots in front and behind have settled and transferred to the pause state. Next, the Kilobot can change to the moving state.
+The Kilobots in moving state proceed their direction based on the acquired strength message from their leaders. Each Kilobot transfers again to the pause state when the distance to its relative leader is less than one cm. 
 \subsection{Birds flock}
+
 %%------------------------------------------------------------------------------------------------------------
 \section {Chain Formation} 
 In real \textit{D. discoideum}, cells have the capability of pulling and pushing each other, which is not possible with Kilobots. We define the Kilobot gradient, which has the same effect of cAMP molecules among the original cell. We choose a robot as the head of the slug. This robot is responsible for finding a good direction and for leading the whole slug. This robot acts as the root of the gradient. We call the head kilobot as the ``source''. Thus the gradient for the source is zero. The nearest robot after the source has the gradient one and the second nearest robot is two and so on. In each time-step, when the robots send the signals, they share the amount of their gradients with each other as well. Therefore, the robots can replace their positions in the chain. Utilizing this method supports the kilobots to recognize their leader and follower in each time-step. \textit{Figure \ref{fig:propagation}} shows the different distances between robots and their propagation areas. 
