@@ -53,9 +53,17 @@ In our model Kilobots operate in two states, pause or move, which is determined 
 In this paper, we study the ...
 %%------------------------------------------------------------------------------------------------------------
 \section {Kilobots} 
-To program Kilobots, we use an overhead infrared transmitter instead of plug-in cable, which allows us to program all the Kilobots collectively once in a time.
+Kilobot possesses an Atmega328 processor controller with 32KB of memory, which runs at 8MHz. To program Kilobots \cite{Nagpal2012}, we use an overhead infrared transmitter instead of plug-in cable, which allows us to program all the Kilobots collectively once in a time.
+
+Kilobots utilize vibration motors for locomotion, a reflective infra-red LED, and distance sensing to communicate with other robots in their neighborhoods. Communications are transmitted by pulsing message in a range of \textit{10cm}  \cite{Nagpal2012}. All the neighbors in the range from any direction can receive the emitted light, which has been reflected by the surface. 
+
+Sensing measured distances between neighbors as location feedback helps the robot movement to be relatively correct. This feature is useful to advance the practice of collective behaviors. However, the lack of bearing system makes some challenges in the swarm coordination implementation \cite{griffith2016evolutionary}. 
+
+
+
+
 \subsection{Direction Finding}
-A Kilobot can determine the distance to the message sender based on the signal strength. 
+A Kilobot can determine the distance to the message sender based on the signal strength but not the direction change. However, the infra-red receiver assists robots to continuously collect and observe the signal strength in order to determine the neighbor pose \cite{griffith2016evolutionary}.
 \subsection{Ad-hoc counting system}
 Each robot can choose just one leader and one follower based on the ad-hoc gradient model. 
 \subsection{Leader-follower behaviors} This behavior is used in keeping the chain pattern. Where the leader kilobot decides to develop a path and the kilobots behind follow in relatively the same direction. A Kilobot in the pause state will wait stable until both Kilobots in front and behind have settled and transferred to the pause state. Next, the Kilobot can change to the moving state.
