@@ -16,3 +16,5 @@ The idea of simulation of slug movement in -*Dictyostelium*- discoideum with kil
     * Long-distance to the leader/ Short-distance to the follower (LDLSDF) 
     * Long-distance to the leader/ Medium-distance to the follower (LDLMDF) 
     * Long-distance to the leader/ Long-distance to the follower (LDLLDF) 
+### To flash the kilobots, follow the steps below: </b>
+https://github.com/par-mo/DictyBOT/wiki/Flash-Kilobots-and-OHC-from-kilobotics.com
